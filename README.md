@@ -112,6 +112,10 @@ DB_PORT=5432
 
 ---
 
+# Live Link
+
+https://smart-inventory-billing-system-nt24.streamlit.app/
+
 # Author
 
 Shivam Patel
