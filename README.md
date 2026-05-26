@@ -1,104 +1,126 @@
 # Smart Inventory and Billing System
 
-A full-stack database-driven Inventory and Billing Management application developed using **Python, PostgreSQL, and Streamlit**.  
-This project helps businesses efficiently manage **customers, products, sales transactions, stock updates, billing operations, and analytical reports** through an interactive web dashboard.
+A full-stack Inventory and Billing Management System developed using Python, PostgreSQL, and Streamlit.  
+The project helps businesses manage customers, products, sales transactions, inventory tracking, and business analytics through an interactive dashboard.
 
 ---
 
-## Project Overview
+# Project Overview
 
-The Smart Inventory and Billing System is designed to automate the daily operations of a small business/shop by replacing manual record keeping with a centralized digital solution.
+The Smart Inventory and Billing System automates daily shop/business operations by replacing manual billing and inventory handling with a centralized database-driven solution.
 
 The system provides:
 
-- Real-time customer records management
+- Customer records management
 - Product inventory management
-- Sales generation with automatic bill amount calculation
-- Automatic stock deduction after each sale
-- Stock restoration on sale deletion
-- Revenue analytics and customer spending reports
+- Sales and billing operations
+- Automatic stock quantity updates
+- Revenue analytics and reporting
+- Real-time PostgreSQL database integration
 
 ---
 
-## Key Features
+## Analytics Dashboard
 
-### Customer Management
-- Add New Customers
-- View Existing Customers
-- Update Customer Information
-- Delete Customers
-
-### Product Management
-- Add New Products
-- View Product Inventory
-- Update Product Details
-- Delete Products
-
-### Sales Management
-- Generate New Sale
-- Automatic Total Bill Calculation
-- Automatic Quantity Deduction from Inventory
-- View All Sales Transactions
-- Delete Sale with Automatic Stock Recovery
-
-### Analytics Dashboard
-- Daily Sales Revenue Trend
-- Top 5 Selling Products
+- Daily Revenue Trend
+- Top Selling Products
 - Top Customers by Spending
-- Dashboard KPI Metrics
+- KPI Dashboard Metrics
 
 ---
 
-## Tech Stack Used
+# Technologies Used
 
 | Technology | Purpose |
 |------------|---------|
-| Python | Core Backend Logic |
+| Python | Backend Development |
 | PostgreSQL | Relational Database |
-| Streamlit | Interactive Web Application UI |
-| Pandas | Data Handling & Reports |
-| Psycopg2 | PostgreSQL Database Connectivity |
-| Python Dotenv | Environment Variable Security |
+| Streamlit | Interactive Web UI |
+| Pandas | Data Handling |
+| Psycopg2 | PostgreSQL Connectivity |
+| Python Dotenv | Environment Variable Management |
 
 ---
 
-## Project Structure
+# Project Structure
 
+```bash
 smart-inventory-billing-system/
 │
 ├── app.py
-├── database.py
 ├── customers.py
 ├── products.py
 ├── sales.py
 ├── sale_items.py
+├── database.py
 ├── database_schema.sql
 ├── requirements.txt
 ├── .gitignore
-└── README.md
+├── README.md
+└── .env
+```
+
+# Database Relationships
+
+- `sales.customer_id → customers.id`
+- `sale_items.sale_id → sales.id`
+- `sale_items.product_id → products.id`
+
+The project uses:
+
+- Foreign Key Constraints
+- ON DELETE CASCADE
+- Relational SQL Queries
+- Aggregate Queries
+- Inventory Stock Transactions
 
 ---
 
-## Database Schema
+# Environment Variables
 
-The project uses four relational tables:
-
-- customers
-- products
-- sales
-- sale_items
-
-These tables are connected using foreign key relationships to maintain proper transactional consistency.
-
----
-
-## Environment Configuration
-
-Create a `.env` file in the root directory and add the following credentials:
+Create a `.env` file in the root directory.
 
 ```env
-DB_HOST=localhost
-DB_NAME=ecommerce
-DB_USER=postgres
+DB_HOST=your_host
+DB_NAME=your_database
+DB_USER=your_username
 DB_PASSWORD=your_password
 DB_PORT=5432
+```
+
+
+---
+
+# Security Features
+
+- Environment Variables using `.env`
+- Secure PostgreSQL Connection
+- SSL Database Connection
+- Dynamic Database Connections
+- Prevention of Global Connection Failures
+
+---
+
+# Future Improvements
+
+- User Authentication System
+- Invoice PDF Generation
+- GST Billing
+- Multi-user Access
+- Export Reports to Excel/PDF
+- Advanced Analytics Dashboard
+
+---
+
+# Author
+
+Shivam Patel
+
+B.Tech Electronics and Communication Engineering  
+Data Analytics & Python Developer
+
+---
+
+# License
+
+This project is developed for educational and portfolio purposes.
