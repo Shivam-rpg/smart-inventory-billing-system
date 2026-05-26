@@ -1,7 +1,18 @@
+# Python
 __pycache__/
 *.pyc
-.env
+*.pyo
+*.pyd
+
+# Virtual Environment
 venv/
 .venv/
+
+# Environment Variables
+.env
+
+# Streamlit
+.streamlit/
+
+# Mac
 .DS_Store
-.idea/
